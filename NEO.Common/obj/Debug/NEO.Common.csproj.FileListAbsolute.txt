@@ -1,0 +1,4 @@
+E:\.Net Project\NEO.Framework\NEO.Common\bin\Debug\NEO.Common.dll
+E:\.Net Project\NEO.Framework\NEO.Common\bin\Debug\NEO.Common.pdb
+E:\.Net Project\NEO.Framework\NEO.Common\obj\Debug\NEO.Common.dll
+E:\.Net Project\NEO.Framework\NEO.Common\obj\Debug\NEO.Common.pdb
