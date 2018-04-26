@@ -6,3 +6,6 @@ E:\.Net Project\NEO.Framework\NEO.Console\obj\Debug\NEO.Console.exe
 E:\.Net Project\NEO.Framework\NEO.Console\obj\Debug\NEO.Console.pdb
 E:\.Net Project\NEO.Framework\NEO.Console\bin\Debug\NEO.Common.dll
 E:\.Net Project\NEO.Framework\NEO.Console\bin\Debug\NEO.Common.pdb
+E:\NEO.System\NEO.Console\bin\Debug\NEO.Console.exe.config
+E:\NEO.System\NEO.Console\obj\Debug\NEO.Console.exe
+E:\NEO.System\NEO.Console\obj\Debug\NEO.Console.pdb
