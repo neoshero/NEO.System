@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,6 +34,13 @@ namespace NEO.Common
             writer.Flush();
             ms.Flush();
 
+        }
+
+        public string Read(string filename)
+        {
+            StreamReader reader = new StreamReader(filename);
+            
+            return reader.ReadToEnd();
         }
     }
 }
