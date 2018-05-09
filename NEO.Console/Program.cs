@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NEO.Common;
+using NEO.Common.Log;
 
 namespace NEO.Console
 {
