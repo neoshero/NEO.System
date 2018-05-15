@@ -15,7 +15,7 @@ namespace NEO.Common
         /// </summary>
         /// <param name="buffer">字节流</param>
         /// <param name="filename">文件名称</param>
-        public void Write(byte[] buffer, string filename)
+        public static void Write(string filename, byte[] buffer)
         {
             var folder = Path.GetDirectoryName(filename);
             
@@ -32,11 +32,37 @@ namespace NEO.Common
             var ms = new MemoryStream(buffer);
             var writer  = new StreamWriter(ms);
             writer.Flush();
-            ms.Flush();
-
+            writer.Close();
+            ms.Close();
         }
 
-        public string Read(string filename)
+        /// <summary>
+        /// 写入文件
+        /// </summary>
+        /// <param name="content">文本内容</param>
+        /// <param name="filename">文件名称</param>
+        public static void Write(string filename, string content)
+        {
+            var folder = Path.GetDirectoryName(filename);
+
+            if (string.IsNullOrEmpty(folder))
+            {
+                folder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "File");
+            }
+
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+
+            var buffer = Encoding.UTF8.GetBytes(content);
+            var ms = new MemoryStream(buffer);
+            var writer = new StreamWriter(ms);
+            writer.Close();
+            ms.Close();
+        }
+
+        public static string GetFileText(string filename)
         {
             StreamReader reader = new StreamReader(filename);
             

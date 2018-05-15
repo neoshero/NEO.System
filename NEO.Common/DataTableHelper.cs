@@ -10,11 +10,12 @@ namespace Console
 {
     public static class DataTableHelper
     {
-        public static List<T> TableToList<T>(this DataTable dt)
+        public static List<T> ToList<T>(this DataTable dt)
         {
             List<T> list = new List<T>();
             Type type = typeof(T);
             PropertyInfo[] pArray = type.GetProperties(); 
+
             foreach (DataRow row in dt.Rows)
             {
                 T entity = Activator.CreateInstance<T>(); 
@@ -24,15 +25,9 @@ namespace Console
                     {
                         continue;     
                     }
-                    if (p.PropertyType == typeof(DateTime) && Convert.ToDateTime(row[p.Name]) < DateTime.MinValue)
-                    {
-                        continue;
-                    }
 
                     var obj = Convert.ChangeType(row[p.Name], p.PropertyType);
                     p.SetValue(entity, obj, null);
-
-                 
                 }
                 list.Add(entity);
             }
@@ -45,7 +40,7 @@ namespace Console
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
         /// <returns></returns>
-        public static DataTable ListToTable<T>(this List<T> list)
+        public static DataTable ToDataTable<T>(this List<T> list)
         {
             Type type = typeof(T);
             PropertyInfo[] properties = type.GetProperties();

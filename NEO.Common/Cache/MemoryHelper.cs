@@ -32,5 +32,13 @@ namespace NEO.Common.Cache
         {
             cache.Remove(key);
         }
+
+        public void Clear()
+        {
+            foreach (var item in cache)
+            {
+                Remove(item.Key);
+            }
+        }
     }
 }

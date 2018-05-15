@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 
-namespace Console
+namespace NEO.Common.Excel
 {
     public class ExcelContext
     {

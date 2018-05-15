@@ -12,3 +12,10 @@ E:\NEO.System\NEO.Console\obj\Debug\NEO.Console.pdb
 C:\NEO.System\NEO.Console\bin\Debug\NEO.Console.exe.config
 C:\NEO.System\NEO.Console\obj\Debug\NEO.Console.exe
 C:\NEO.System\NEO.Console\obj\Debug\NEO.Console.pdb
+C:\NEO.System\NEO.Console\bin\Debug\NEO.Console.exe
+C:\NEO.System\NEO.Console\bin\Debug\NEO.Console.pdb
+C:\NEO.System\NEO.Console\bin\Debug\NEO.Common.dll
+C:\NEO.System\NEO.Console\bin\Debug\EPPlus.dll
+C:\NEO.System\NEO.Console\bin\Debug\NEO.Common.pdb
+C:\NEO.System\NEO.Console\bin\Debug\EPPlus.xml
+C:\NEO.System\NEO.Console\obj\Debug\NEO.Console.csprojResolveAssemblyReference.cache

@@ -2,3 +2,10 @@ E:\.Net Project\NEO.Framework\NEO.Common\bin\Debug\NEO.Common.dll
 E:\.Net Project\NEO.Framework\NEO.Common\bin\Debug\NEO.Common.pdb
 E:\.Net Project\NEO.Framework\NEO.Common\obj\Debug\NEO.Common.dll
 E:\.Net Project\NEO.Framework\NEO.Common\obj\Debug\NEO.Common.pdb
+C:\NEO.System\NEO.Common\bin\Debug\NEO.Common.dll
+C:\NEO.System\NEO.Common\bin\Debug\NEO.Common.pdb
+C:\NEO.System\NEO.Common\bin\Debug\EPPlus.dll
+C:\NEO.System\NEO.Common\bin\Debug\EPPlus.xml
+C:\NEO.System\NEO.Common\obj\Debug\NEO.Common.csprojResolveAssemblyReference.cache
+C:\NEO.System\NEO.Common\obj\Debug\NEO.Common.dll
+C:\NEO.System\NEO.Common\obj\Debug\NEO.Common.pdb
