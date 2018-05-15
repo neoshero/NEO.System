@@ -20,8 +20,6 @@ namespace NEO.Console
 
             var gender = Gender.Famale.ToDescription();
 
-            var dictionary = typeof(Gender).GetDictionaryByEnum();
-            var description = typeof(Gender).GetDescritionByEnum();
 
             var content = "JokerFakerleagon";
             var buffer = Encoding.UTF8.GetBytes(content);
