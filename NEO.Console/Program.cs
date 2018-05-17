@@ -20,7 +20,6 @@ namespace NEO.Console
 
             var gender = Gender.Famale.ToDescription();
 
-
             var content = "JokerFakerleagon";
             var buffer = Encoding.UTF8.GetBytes(content);
 

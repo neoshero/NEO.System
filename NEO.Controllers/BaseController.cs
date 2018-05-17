@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NEO.Controller
+namespace NEO.Controllers
 {
     public class BaseController:System.Web.Mvc.Controller
     {
