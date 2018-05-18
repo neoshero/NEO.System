@@ -61,13 +61,25 @@
         </div>
     </div>
 
-    <div class="layui-body">
+    <div class="layui-body" id="content">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">内容主体区域</div>
-    </div>
-
-    <div class="layui-footer">
-        <!-- 底部固定区域 -->
-        © layui.com - 底部固定区域
+        <div style="padding: 15px;">
+            {{ content }}
+        </div>
+        <textarea v-bind:class="{approve:approve,'activce':active}">
+            
+        </textarea>
+      
     </div>
 </div>
+
+<script>
+    var data = { age: 1 };
+    var app = new Vue({
+        el:"#content",
+        data: {
+            approve: true,
+            active:false
+        }
+    });
+</script>
