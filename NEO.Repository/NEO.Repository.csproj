@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2D2E3587-902E-4571-8FF5-75CD3F758200}</ProjectGuid>
+    <ProjectGuid>{0D83DABC-E815-4C50-9CB5-9681097E7953}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NEO.Common</RootNamespace>
-    <AssemblyName>NEO.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>NEO.Repository</RootNamespace>
+    <AssemblyName>NEO.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,44 +30,44 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EPPlus, Version=4.5.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.4.5.1\lib\net40\EPPlus.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PresentationCore" />
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\DataTableHelper.cs" />
-    <Compile Include="Date\DateExtension.cs" />
-    <Compile Include="Date\DateHelper.cs" />
-    <Compile Include="Encrypt\Security.cs" />
-    <Compile Include="Excel\ExcelContext.cs" />
-    <Compile Include="Extension\CollectionExtension.cs" />
-    <Compile Include="Extension\EnumExtension.cs" />
-    <Compile Include="Extension\ExpressionExtension.cs" />
-    <Compile Include="FileHelper.cs" />
-    <Compile Include="Cache\MemoryHelper.cs" />
-    <Compile Include="Log\LogHelper.cs" />
-    <Compile Include="Extension\OperatorExtension.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="NeoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Mail\SMTPService.cs" />
+    <Compile Include="ScoreRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\Security\" />
+    <ProjectReference Include="..\NEO.Common\NEO.Common.csproj">
+      <Project>{2d2e3587-902e-4571-8ff5-75cd3f758200}</Project>
+      <Name>NEO.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NEO.Core\NEO.Core.csproj">
+      <Project>{13b0a40e-4aa1-43e6-9861-52cc46b6eac7}</Project>
+      <Name>NEO.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

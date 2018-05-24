@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using NEO.Service;
 
 
 namespace NEO.Controllers.User
@@ -8,6 +9,7 @@ namespace NEO.Controllers.User
     {
         public ActionResult Index()
         {
+            new ScoreService().CreateInstance();
             return View();
         }
     }

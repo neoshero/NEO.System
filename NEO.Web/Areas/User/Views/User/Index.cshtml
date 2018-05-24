@@ -1,5 +1,37 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+<div id="content">
+    <button-counter></button-counter>
+    <district-combobox></district-combobox>
+    @Model
+@*    <select><option v-for="item in people" v-bind:value="item.Id">{{ item.Name }}</option></select>*@
+</div>
+<script>
+    Vue.component('button-counter',
+    {
+        data: function() {
+            return {
+                count: 0
+            }
+        },
+        template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    });
+
+    Vue.component('district-combobox',{
+        data:function() {
+            return {
+                district: [{ Id: 1, Name: 'Koreans' }, { Id: 2, Name: 'Japaneses' },{Id:3,Name:'Chinese'}]
+            }
+        },
+        template: '<select><option v-for="item in district" v-bind:value="item.Id">{{ item.Name }}</option></select>'
+    });
+
+    var app = new Vue({
+        el: '#content',
+        data: {
+            people: [{ Id: 1, Name: 'Korean' }, { Id: 2, Name: 'Japanese' }, { Id: 3, Name: 'Chinese' }]
+        }
+    });
+</script>

@@ -53,6 +53,12 @@
     <Compile Include="Home\ViewHome.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NEO.Service\NEO.Service.csproj">
+      <Project>{FADAE94E-91D6-455A-A03C-E9D01D25E1AF}</Project>
+      <Name>NEO.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

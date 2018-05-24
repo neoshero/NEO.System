@@ -61,25 +61,20 @@
         </div>
     </div>
 
-    <div class="layui-body" id="content">
-        <!-- 内容主体区域 -->
-        <div style="padding: 15px;">
-            {{ content }}
-        </div>
-        <textarea v-bind:class="{approve:approve,'activce':active}">
-            
-        </textarea>
-      
+    <div  id="content">
+        <district-combobox></district-combobox>
     </div>
 </div>
 
 <script>
-    var data = { age: 1 };
-    var app = new Vue({
-        el:"#content",
-        data: {
-            approve: true,
-            active:false
-        }
-    });
+    Vue.component('button-counter', {
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    })
+
+    new Vue({ el: '#content' });
 </script>
