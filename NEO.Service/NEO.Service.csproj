@@ -43,10 +43,19 @@
   <ItemGroup>
     <Compile Include="BaseResponse.cs" />
     <Compile Include="BaseService.cs" />
+    <Compile Include="Base\BaseModuleService.cs" />
+    <Compile Include="Base\BasePermissionService.cs" />
+    <Compile Include="Base\BaseRoleService.cs" />
+    <Compile Include="Base\MemberService.cs" />
+    <Compile Include="Base\OrganizationService.cs" />
+    <Compile Include="Base\ProfileService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScoreService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NEO.Common\NEO.Common.csproj">
+      <Project>{2D2E3587-902E-4571-8FF5-75CD3F758200}</Project>
+      <Name>NEO.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NEO.Core\NEO.Core.csproj">
       <Project>{13B0A40E-4AA1-43E6-9861-52CC46B6EAC7}</Project>
       <Name>NEO.Core</Name>

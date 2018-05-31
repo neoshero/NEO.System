@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="Base\BaseModuleRepository.cs" />
+    <Compile Include="Base\BasePermissionRepository.cs" />
+    <Compile Include="Base\BaseRoleRepository.cs" />
+    <Compile Include="Base\MemberRepository.cs" />
+    <Compile Include="Base\OrganizationRepository.cs" />
+    <Compile Include="Base\ProfileRepository.cs" />
     <Compile Include="NeoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScoreRepository.cs" />

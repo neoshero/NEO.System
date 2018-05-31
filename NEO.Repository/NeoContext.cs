@@ -11,7 +11,7 @@ namespace NEO.Repository
             
         }
 
-        public DbSet<Score> Score { get; set; }
+      
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

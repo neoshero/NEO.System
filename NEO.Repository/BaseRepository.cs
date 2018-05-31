@@ -23,11 +23,6 @@ namespace NEO.Repository
             return DbContext.Set<TEntity>().Add(entity);
         }
 
-        public string GetEntityState(TEntity entity)
-        {
-            return DbContext.Entry(entity).State.ToString();
-        }
-
         public IEnumerable<TEntity> Insert(IEnumerable<TEntity> entities)
         {
             return DbContext.Set<TEntity>().AddRange(entities);
@@ -48,5 +43,9 @@ namespace NEO.Repository
             return DbContext.Set<TEntity>().FirstOrDefault(expression);
         }
 
-}
+        public string GetEntityState(TEntity entity)
+        {
+            return DbContext.Entry(entity).State.ToString();
+        }
+    }
 }

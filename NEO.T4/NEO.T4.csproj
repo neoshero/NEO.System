@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2D2E3587-902E-4571-8FF5-75CD3F758200}</ProjectGuid>
+    <ProjectGuid>{6E286EA8-BC5A-463B-BFA1-8A8DEA3246E9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NEO.Common</RootNamespace>
-    <AssemblyName>NEO.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>NEO.T4</RootNamespace>
+    <AssemblyName>NEO.T4</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,45 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EPPlus, Version=4.5.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.4.5.1\lib\net40\EPPlus.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PresentationCore" />
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\DataTableHelper.cs" />
-    <Compile Include="Data\Pager.cs" />
-    <Compile Include="Date\DateExtension.cs" />
-    <Compile Include="Date\DateHelper.cs" />
-    <Compile Include="Encrypt\Security.cs" />
-    <Compile Include="Excel\ExcelContext.cs" />
-    <Compile Include="Extension\CollectionExtension.cs" />
-    <Compile Include="Extension\EnumExtension.cs" />
-    <Compile Include="Extension\ExpressionExtension.cs" />
-    <Compile Include="FileHelper.cs" />
-    <Compile Include="Cache\MemoryHelper.cs" />
-    <Compile Include="Log\LogHelper.cs" />
-    <Compile Include="Extension\OperatorExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Mail\SMTPService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\Security\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

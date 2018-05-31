@@ -41,9 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Score.cs" />
+    <Compile Include="Base\BaseModule.cs" />
+    <Compile Include="Base\BasePermission.cs" />
+    <Compile Include="Base\BaseRole.cs" />
+    <Compile Include="Base\Member.cs" />
+    <Compile Include="Base\Organization.cs" />
+    <Compile Include="Base\Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
