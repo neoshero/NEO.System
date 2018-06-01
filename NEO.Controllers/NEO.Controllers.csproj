@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseController.cs" />
+    <Compile Include="Base\RoleController.cs" />
     <Compile Include="SystemExceptionFilter.cs" />
     <Compile Include="User\UserController.cs" />
     <Compile Include="Home\HomeController.cs" />
@@ -54,6 +55,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NEO.Core\NEO.Core.csproj">
+      <Project>{13B0A40E-4AA1-43E6-9861-52CC46B6EAC7}</Project>
+      <Name>NEO.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NEO.Service\NEO.Service.csproj">
       <Project>{FADAE94E-91D6-455A-A03C-E9D01D25E1AF}</Project>
       <Name>NEO.Service</Name>

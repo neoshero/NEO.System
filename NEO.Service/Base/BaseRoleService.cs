@@ -11,7 +11,15 @@ namespace NEO.Service
 		public BaseResponse Create(BaseRole entity)
 		{
 			BaseResponse response = new BaseResponse();
+		    entity.Code = "Administrator";
+		    entity.Name = "π‹¿Ì‘±";
+		    entity.Enabled = true;
+            entity.CreatedDate = DateTime.Now;
+            entity.ModifyDate = DateTime.Now;
 
+		    UnitOfWork.BaseRoleRepository.Insert(entity);
+		    UnitOfWork.SaveChanges();
+//            entity.BasePermissions
 			return response;
 		}
 

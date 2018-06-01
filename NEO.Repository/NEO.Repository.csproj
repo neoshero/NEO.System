@@ -58,7 +58,6 @@
     <Compile Include="Base\ProfileRepository.cs" />
     <Compile Include="NeoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScoreRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>

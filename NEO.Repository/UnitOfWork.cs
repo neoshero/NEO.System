@@ -21,10 +21,13 @@ namespace NEO.Repository
             }
         }
 
-        public ScoreRepository ScoreRepository
-        {
-            get { return new ScoreRepository(Context); }
-        }
+        public BaseModuleRepository BaseModuleRepository { get { return new BaseModuleRepository(Context); } }
+        public BasePermissionRepository BasePermissionRepository { get { return new BasePermissionRepository(Context); } }
+        public BaseRoleRepository BaseRoleRepository { get { return new BaseRoleRepository(Context); } }
+        public MemberRepository MemberRepository { get { return new MemberRepository(Context); } }
+        public OrganizationRepository OrganizationRepository { get { return new OrganizationRepository(Context); } }
+        public ProfileRepository ProfileRepository { get { return new ProfileRepository(Context); } }
+
 
         public void SaveChanges()
         {

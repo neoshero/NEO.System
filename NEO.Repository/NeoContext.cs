@@ -4,14 +4,19 @@ using NEO.Core;
 
 namespace NEO.Repository
 {
-    public class NeoContext:DbContext
+    public class NeoContext : DbContext
     {
-        public NeoContext():base("name=NeoConnection")
+        public NeoContext() : base("name=NeoConnection")
         {
-            
         }
+        public DbSet<BaseModule> BaseModule { get; set; }
+        public DbSet<BasePermission> BasePermission { get; set; }
+        public DbSet<BaseRole> BaseRole { get; set; }
+        public DbSet<Member> Member { get; set; }
+        public DbSet<Organization> Organization { get; set; }
+        public DbSet<Profile> Profile { get; set; }
 
-      
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

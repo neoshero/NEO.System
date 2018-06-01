@@ -10,5 +10,9 @@ namespace NEO.Controllers
 {
     public class BaseController:System.Web.Mvc.Controller
     {
+        public JsonResult JsonGet(object obj)
+        {
+            return Json(obj,JsonRequestBehavior.AllowGet);
+        }
     }
 }
