@@ -39,12 +39,11 @@ namespace NEO.Common.Extension
         /// </summary>
         /// <param name="source"></param>
         /// <returns></returns>
-        public static Dictionary<int, string> GetDictionaryByEnum(this Type source)
+        public static Dictionary<int, string> GetDictionaryByEnum(this Enum oEnum)
         {
             Dictionary<int, string> dictionary = new Dictionary<int, string>();
-            if (!source.IsEnum)
-                return dictionary;
 
+            Type source = oEnum.GetType();
             FieldInfo[] fields = source.GetFields(BindingFlags.Public|BindingFlags.Static);
             foreach (var field in fields)
             {
@@ -60,12 +59,11 @@ namespace NEO.Common.Extension
         /// </summary>
         /// <param name="source"></param>
         /// <returns></returns>
-        public static Dictionary<int, string> GetDescritionByEnum(this Type source)
+        public static Dictionary<int, string> GetDescritionByEnum(this Enum oEnum)
         {
             Dictionary<int, string> dictionary = new Dictionary<int, string>();
-            if (!source.IsEnum)
-                return dictionary;
 
+            Type source = oEnum.GetType();
             FieldInfo[] fields = source.GetFields(BindingFlags.Public | BindingFlags.Static);
             foreach (var field in fields)
             {

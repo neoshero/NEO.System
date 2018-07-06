@@ -14,7 +14,7 @@ namespace NEO.Core
         public string Password { get; set; } 
         public string Salt { get; set; } 
         public int? ProfileId { get; set; } 
-        public int? RoleId { get; set; } 
+        public int? BaseRoleId { get; set; } 
         public int? OrganizationId { get; set; } 
         public string AccessToken { get; set; } 
         public DateTime? AccessTokenExpiry { get; set; } 
@@ -23,6 +23,8 @@ namespace NEO.Core
         public int? CreatedById { get; set; } 
         public DateTime ModifyDate { get; set; } 
         public string ModifyBy { get; set; } 
-        public int? ModifyById { get; set; } 
+        public int? ModifyById { get; set; }
+
+        public virtual BaseRole BaseRole { get; set; }
     }
 }

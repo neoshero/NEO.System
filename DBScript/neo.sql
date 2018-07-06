@@ -579,7 +579,7 @@ go
 /* Table: Member                                                */
 /*==============================================================*/
 create table Member (
-   Id                   int                  not null,
+   Id                   int                  identity,
    Uid                  varchar(128)         not null,
    Password             varchar(256)         not null,
    Salt                 varchar(32)          not null,

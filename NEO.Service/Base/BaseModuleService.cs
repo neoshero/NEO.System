@@ -8,11 +8,14 @@ namespace NEO.Service
 {
     public class BaseModuleService:BaseService<BaseModule>
     {
-		public BaseResponse Create(BaseModule entity)
+		public BaseResponse Create(int? parentId, string code, string name, bool ispublic, bool expand, bool isleaf, string navigateUrl, int priority, bool deleted, string remark,string memberName,int memberId)
 		{
 			BaseResponse response = new BaseResponse();
+            var entity = BaseModule.CreateInstance(null, "AAA", "BBB", true, true, true, "/Power/Index", 1, false, "Test Data", null);
 
-			return response;
+            UnitOfWork.BaseModuleRepository.Insert(entity);
+            UnitOfWork.SaveChanges();
+            return response;
 		}
 
 		public BaseResponse Modify(BaseModule entity)

@@ -8,17 +8,13 @@ namespace NEO.Service
 {
     public class BaseRoleService:BaseService<BaseRole>
     {
-		public BaseResponse Create(BaseRole entity)
+		public BaseResponse Create(BaseRole entitys)
 		{
 			BaseResponse response = new BaseResponse();
-		    entity.Code = "Administrator";
-		    entity.Name = "¹ÜÀíÔ±";
-		    entity.Enabled = true;
-            entity.CreatedDate = DateTime.Now;
-            entity.ModifyDate = DateTime.Now;
+		    var role = UnitOfWork.BaseRoleRepository.Get(t => t.Id == 1);
 
-		    UnitOfWork.BaseRoleRepository.Insert(entity);
-		    UnitOfWork.SaveChanges();
+		    var permission = UnitOfWork.BasePermissionRepository.Get(t => t.Id == 1);
+//		    UnitOfWork.SaveChanges();
 //            entity.BasePermissions
 			return response;
 		}

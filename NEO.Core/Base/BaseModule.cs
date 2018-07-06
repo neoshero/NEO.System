@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Dynamic;
 using System.Text;
 
 namespace NEO.Core
@@ -25,6 +26,28 @@ namespace NEO.Core
         public int? CreatedById { get; set; } 
         public DateTime ModifyDate { get; set; } 
         public string ModifyBy { get; set; } 
-        public int? ModifyById { get; set; } 
+        public int? ModifyById { get; set; }
+
+        public static BaseModule CreateInstance(int? parentId,string code,string name,bool ispublic,bool expand,bool isleaf,string navigateUrl,int priority,bool deleted,string remark,Member member)
+        {
+            DateTime now = DateTime.UtcNow;
+            return new BaseModule()
+            {
+                ParentId = parentId,
+                Code = code,
+                Name = name,
+                IsPublic = ispublic,
+                Expand = expand,
+                IsLeaf = isleaf,
+                NavigateUrl = navigateUrl,
+                Priority = priority,
+                Deleted = deleted,
+                Remark = remark,
+                CreatedDate = now,
+                CreatedBy = "1",
+                ModifyDate = now,
+                ModifyBy = "1"
+            };
+        }
     }
 }

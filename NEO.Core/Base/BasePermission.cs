@@ -19,6 +19,8 @@ namespace NEO.Core
         public int? CreatedById { get; set; } 
         public DateTime ModifyDate { get; set; } 
         public string ModifyBy { get; set; } 
-        public int? ModifyById { get; set; } 
+        public int? ModifyById { get; set; }
+
+        public virtual ICollection<BaseRole> BaseRoles { get; set; }
     }
 }

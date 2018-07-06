@@ -10,6 +10,11 @@ namespace NEO.Core
 
     public class BaseRole
     {
+        public BaseRole()
+        {
+            this.BasePermissions = new HashSet<BasePermission>();
+        }
+
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; } 
         public string Code { get; set; } 
@@ -23,8 +28,10 @@ namespace NEO.Core
         public int? CreatedById { get; set; } 
         public DateTime ModifyDate { get; set; } 
         public string ModifyBy { get; set; } 
-        public int? ModifyById { get; set; } 
+        public int? ModifyById { get; set; }
 
         public virtual ICollection<BasePermission> BasePermissions { get; set; }
+
+        public virtual ICollection<Member> Members { get; set; }
     }
 }

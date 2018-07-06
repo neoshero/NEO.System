@@ -20,6 +20,13 @@ namespace NEO.Repository
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<BaseRole>().HasMany(t => t.BasePermissions).WithMany(t => t.BaseRoles).Map(m =>
+            {
+                m.ToTable("BaseRolePermission");
+                m.MapLeftKey("BaseRoleId");
+                m.MapRightKey("BasePermissionId");
+            });
+
             //删除表名称的复数形式
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             //禁用一对多级联删除
