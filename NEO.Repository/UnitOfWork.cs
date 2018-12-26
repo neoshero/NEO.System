@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NEO.Common.Log;
+using NEO.Common;
 
 namespace NEO.Repository
 {
@@ -23,7 +19,7 @@ namespace NEO.Repository
 
         public BaseModuleRepository BaseModuleRepository { get { return new BaseModuleRepository(Context); } }
         public BasePermissionRepository BasePermissionRepository { get { return new BasePermissionRepository(Context); } }
-        public BaseRoleRepository BaseRoleRepository { get { return new BaseRoleRepository(Context); } }
+        public RoleRepository RoleRepository { get { return new RoleRepository(Context); } }
         public MemberRepository MemberRepository { get { return new MemberRepository(Context); } }
         public OrganizationRepository OrganizationRepository { get { return new OrganizationRepository(Context); } }
         public ProfileRepository ProfileRepository { get { return new ProfileRepository(Context); } }

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using NEO.Common.Data;
+using NEO.Common;
 using NEO.Core;
 
 namespace NEO.Service

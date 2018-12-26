@@ -25,6 +25,6 @@ namespace NEO.Core
         public string ModifyBy { get; set; } 
         public int? ModifyById { get; set; }
 
-        public virtual BaseRole BaseRole { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

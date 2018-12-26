@@ -39,7 +39,7 @@ namespace NEO.Common.Extension
             return Convert.ToInt32(numberic);
         }
 
-        public static bool IsNull(this string value)
+        public static bool IsNullOrEmpty(this string value)
         {
             return string.IsNullOrEmpty(value);
         }

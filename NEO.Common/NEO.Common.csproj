@@ -34,10 +34,13 @@
       <HintPath>..\packages\EPPlus.4.5.1\lib\net40\EPPlus.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Security" />
@@ -53,7 +56,7 @@
     <Compile Include="Date\DateExtension.cs" />
     <Compile Include="Date\DateHelper.cs" />
     <Compile Include="Encrypt\Security.cs" />
-    <Compile Include="Excel\ExcelContext.cs" />
+    <Compile Include="Extension\Excel\ExcelContext.cs" />
     <Compile Include="Extension\CollectionExtension.cs" />
     <Compile Include="Extension\EnumExtension.cs" />
     <Compile Include="Extension\ExpressionExtension.cs" />

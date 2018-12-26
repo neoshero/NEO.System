@@ -16,7 +16,7 @@ namespace NEO.Core
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int? BasePermissionId { get; set; }
 
-        public virtual BaseRole BaseRole { get; set; }
+        public virtual Role Role { get; set; }
 
         public virtual BasePermission BasePermission { get; set; }
     }

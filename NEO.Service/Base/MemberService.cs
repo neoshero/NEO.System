@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using NEO.Common.Data;
+using NEO.Common;
 using NEO.Core;
 
 namespace NEO.Service
@@ -25,6 +25,12 @@ namespace NEO.Service
 		public Pager<Member> GetPage()
 		{
             return null;
+        }
+
+        public BaseResponse Login(string uid,string pwd)
+        {
+            var response = new BaseResponse();
+            return response;
         }
     }
 }

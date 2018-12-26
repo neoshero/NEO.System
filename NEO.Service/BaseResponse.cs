@@ -11,11 +11,12 @@ namespace NEO.Service
         public BaseResponse()
         {
             Code = 1;
+            Message = "操作成功";
         }
 
         /// <summary>
         /// 1 Success
-        /// 0 Fail
+        /// -1 Fail
         /// </summary>
         public int Code { get; set; }
 

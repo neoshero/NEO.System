@@ -9,5 +9,10 @@ namespace NEO.Controllers.Home
         {
             return View();
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }

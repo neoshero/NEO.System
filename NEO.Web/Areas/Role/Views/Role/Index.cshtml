@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="box box-danger">
+    <div class="box-body">
+        <div class="form-group form-group-sm">
+            <ul class="nav nav-pills">
+                <li>
+                    <input v-model="pager.Code" class="form-control input-sm" placeholder="角色编号" />
+                </li>
+                <li>
+                    <input v-model="pager.Name" class="form-control input-sm" placeholder="角色名称" />
+                </li>
+                <li>
+                    <button type="button" class="btn btn-sm bg-purple" v-on:click="search">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-sm bg-purple" v-on:click="dataAdded">
+                        <i class="glyphicon glyphicon-plus"></i>
+                    </button>
+                </li> 
+                <li>
+                    <button type="button" class="btn btn-sm bg-purple" v-on:click="search">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-sm bg-purple" v-on:click="search">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<table class="table table-hover table-responsive table-bordered table-condensed">
+    <thead>
+    <tr>
+        <th style="width: 10px"><input type="checkbox" id="checkAll" /></th>
+        <th>角色编号</th>
+        <th>角色名称</th>
+        <th>是否公开</th>
+        <th>是否停用</th>
+    </tr>
+    <tbody v-for="item in records">
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td>{{ item.Code }}</td>
+            <td>{{ item.Name }}</td>
+            <td>{{ item.IsPublish }}</td>
+            <td>{{ item.Enabled }}</td>
+        </tr>
+    </tbody>
+</table>
+
+@section script{
+    <script>
+        var vm =  ViewModel({
+            title: "角色",
+            dataQueryUrlAccessor: "@Url.Action("Query")",
+            dataCreateUrlAccessor: "@Url.Action("Create")",
+            dataModifyAccessor: "@Url.Action("Modify")",
+            dataDeleteAccessor: "@Url.Action("Delete")",
+        });
+    </script>
+}

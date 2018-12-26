@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace NEO.Common.Log
+namespace NEO.Common
 {
     public class LogHelper
     {

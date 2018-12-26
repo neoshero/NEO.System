@@ -6,13 +6,13 @@ using NEO.Core;
 
 namespace NEO.Repository
 {
-    public class BaseRoleRepository: BaseRepository<BaseRole>
+    public class RoleRepository: BaseRepository<Role>
     {
-		public BaseRoleRepository(NeoContext context) : base (context)
+		public RoleRepository(NeoContext context) : base (context)
 		{	
 		}
 
-        public BaseRole GetById(int id)
+        public Role GetById(int id)
         {
             return DbContext.BaseRole.FirstOrDefault(t => t.Id == id);
         }

@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link href="~/Content/home.css" rel="stylesheet" />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pr-wrap">
+                <div class="pass-reset">
+                    <label>
+                        Enter the email you signed up with
+                    </label>
+                    <input type="email" placeholder="Email" />
+                    <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
+                </div>
+            </div>
+            <div class="wrap">
+                <p class="form-title">
+                    Sign In
+                </p>
+                <form class="login" method="post" action="@Url.Action("Authorize")">
+                    <input type="text" name="Uid" placeholder="Username" />
+                    <input type="password" name="Pwd" placeholder="Password" />
+                    <input type="button" value="Sign In" class="btn btn-success btn-sm" onclick="authorize()"/>
+                    <div class="remember-forgot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" />
+                                        Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 forgot-pass-content">
+                                <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document)
+        .ready(function() {
+            $('.forgot-pass')
+                .click(function(event) {
+                    $(".pr-wrap").toggleClass("show-pass-reset");
+                });
+
+            $('.pass-reset-submit')
+                .click(function(event) {
+                    $(".pr-wrap").removeClass("show-pass-reset");
+                });
+        });
+
+    function authorize() {
+        var data = $("form").serialize();
+        $.ajax({
+            url: "@Url.Action("Authorize","Member")",
+            type:"post",
+            data:data,
+            success:function(response) {
+                if (response.Code === 1) {
+                    window.location.href = "/Home/Index";
+                } else {
+                    layer.alert(response.Message);
+                }
+            }
+        });
+    }
+</script>

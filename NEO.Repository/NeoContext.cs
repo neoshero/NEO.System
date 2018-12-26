@@ -11,7 +11,7 @@ namespace NEO.Repository
         }
         public DbSet<BaseModule> BaseModule { get; set; }
         public DbSet<BasePermission> BasePermission { get; set; }
-        public DbSet<BaseRole> BaseRole { get; set; }
+        public DbSet<Role> BaseRole { get; set; }
         public DbSet<Member> Member { get; set; }
         public DbSet<Organization> Organization { get; set; }
         public DbSet<Profile> Profile { get; set; }
@@ -20,12 +20,6 @@ namespace NEO.Repository
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BaseRole>().HasMany(t => t.BasePermissions).WithMany(t => t.BaseRoles).Map(m =>
-            {
-                m.ToTable("BaseRolePermission");
-                m.MapLeftKey("BaseRoleId");
-                m.MapRightKey("BasePermissionId");
-            });
 
             //删除表名称的复数形式
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

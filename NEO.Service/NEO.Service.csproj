@@ -45,7 +45,7 @@
     <Compile Include="BaseService.cs" />
     <Compile Include="Base\BaseModuleService.cs" />
     <Compile Include="Base\BasePermissionService.cs" />
-    <Compile Include="Base\BaseRoleService.cs" />
+    <Compile Include="Base\RoleService.cs" />
     <Compile Include="Base\MemberService.cs" />
     <Compile Include="Base\OrganizationService.cs" />
     <Compile Include="Base\ProfileService.cs" />
@@ -64,6 +64,9 @@
       <Project>{0d83dabc-e815-4c50-9cb5-9681097e7953}</Project>
       <Name>NEO.Repository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NEO.Repository;
+﻿using NEO.Repository;
 
 namespace NEO.Service
 {
@@ -11,7 +6,7 @@ namespace NEO.Service
     {
         private UnitOfWork _unitOfWork;
 
-        public UnitOfWork UnitOfWork
+        protected UnitOfWork UnitOfWork
         {
             get
             {
@@ -20,5 +15,6 @@ namespace NEO.Service
                 return _unitOfWork;
             }
         }
+
     }
 }
