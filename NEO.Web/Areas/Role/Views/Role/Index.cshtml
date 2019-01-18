@@ -21,7 +21,7 @@
                     <button type="button" class="btn btn-sm bg-purple" v-on:click="dataAdded">
                         <i class="glyphicon glyphicon-plus"></i>
                     </button>
-                </li> 
+                </li>
                 <li>
                     <button type="button" class="btn btn-sm bg-purple" v-on:click="search">
                         <i class="glyphicon glyphicon-edit"></i>
@@ -39,18 +39,18 @@
 </div>
 
 
-<table class="table table-hover table-responsive table-bordered table-condensed">
+<table id="table" class="table table-hover table-responsive table-bordered table-condensed">
     <thead>
-    <tr>
-        <th style="width: 10px"><input type="checkbox" id="checkAll" /></th>
-        <th>角色编号</th>
-        <th>角色名称</th>
-        <th>是否公开</th>
-        <th>是否停用</th>
-    </tr>
+        <tr>
+            <th style="width: 10px"><input type="checkbox" id="checkAll" /></th>
+            <th>角色编号</th>
+            <th>角色名称</th>
+            <th>是否公开</th>
+            <th>是否停用</th>
+        </tr>
     <tbody v-for="item in records">
         <tr>
-            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" v-model="item.Checked" /></td>
             <td>{{ item.Code }}</td>
             <td>{{ item.Name }}</td>
             <td>{{ item.IsPublish }}</td>
@@ -59,14 +59,21 @@
     </tbody>
 </table>
 
+<v-table v-bind:datas="records"></v-table>
+<v-button></v-button>
 @section script{
+<script src="~/Scripts/Components/table.js"></script>
     <script>
-        var vm =  ViewModel({
+        
+        var options = ViewModel({
             title: "角色",
             dataQueryUrlAccessor: "@Url.Action("Query")",
             dataCreateUrlAccessor: "@Url.Action("Create")",
             dataModifyAccessor: "@Url.Action("Modify")",
-            dataDeleteAccessor: "@Url.Action("Delete")",
+            dataDeleteAccessor: "@Url.Action("Delete")"
         });
+        //
+        var vModel = new Vue(options);
     </script>
+
 }

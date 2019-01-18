@@ -14,7 +14,7 @@ namespace NEO.Controllers.Role
         public JsonResult Query(int pageIndex,string code,string name)
         {
             var pager = new RoleService().GetPageList(pageIndex, PageSize, code, name);
-
+            
             return JsonAllowGet(new
             {
                 PageIndex = pager.PageIndex,

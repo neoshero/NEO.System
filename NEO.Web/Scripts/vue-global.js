@@ -1,9 +1,9 @@
 ﻿function ViewModel(options) {
-    var vm = new Vue({
+    var vm = {
         el: options.Id == undefined ? "#container" : options.Id,
         data: {
             title: options.title,
-            pager: {
+            pager: { 
                 totalPage: 0,
                 pageIndex: 1
             },
@@ -15,22 +15,29 @@
             jcWindow: {}
         },
         computed: options.computed,
-        methods: {
+        methods:  {
             dataAdded: function () {
                 this.jcWindow = $.dialog({
                     title: "添加" + options.title,
                     container: "#jquery-container",
                     type: "purple",
                     useBootstrap: false,
-                    content: "url:" + options.dataCreateUrlAccessor,
+                    content: "url:" + vm.data.dataCreateUrlAccessor,
                     onContentReady: function () {
+                        $("#save").on("click", function () {
+                            var formData = $("#formCreate").serialize();
+                            vm.methods.dataAdding(formData);
+                        });
 
+                        $("#cancel").on("click", function () {
+                            vm.data.jcWindow.close();
+                        });
                     }
                 });
             },
             dataAdding: function (data) {
                 $.ajax({
-                    url: this.dataCreateUrlAccessor,
+                    url: vm.data.dataCreateUrlAccessor,
                     type: "post",
                     data: data,
                     success: function (response) {
@@ -49,15 +56,15 @@
                     container: "#jquery-container",
                     type: "purple",
                     useBootstrap: false,
-                    content: "url:" + options.dataModifyAccessor,
+                    content: "url:" + vm.data.dataModifyAccessor,
                     onContentReady: function () {
 
                     }
                 });
-            },
+            }, 
             dataUpdating: function (data) {
                 $.ajax({
-                    url: this.dataModifyAccessor,
+                    url: vm.data.dataModifyAccessor,
                     type: "post",
                     data: data,
                     success: function (response) {
@@ -72,7 +79,7 @@
             },
             dataDeleting: function (data) {
                 $.ajax({
-                    url: this.dataDeleteAccessor,
+                    url: vm.data.dataDeleteAccessor,
                     type: "post",
                     data: data,
                     success: function (response) {
@@ -93,20 +100,36 @@
                     this.pager.PageIndex = pageIndex;
                 }
                 $.ajax({
-                    url: this.dataQueryUrlAccessor,
+                    url: vm.data.dataQueryUrlAccessor,
                     data: this.pager,
                     type: "get",
-                    success: function (response) {
-                        vm.pager.records = [];
-                        vm.pager.records.push(response.Data);
-                        vm.pager.totalPage = response.TotalPage;
+                    success: function (response) {                                                                   
+                        vm.data.records = response.Data;
+                        vm.data.totalPage = response.TotalPage;
                     }
                 });
             }
         },
+        components:options.components,
         mounted: function () {
             this.dataQuery();
         }
-    });
+    };
     return vm;
 }
+
+$(function() {
+    var check = $("#checkAll");
+    //table attach checkAll event
+    if (check.length === 1) {
+        check.on("change", function () {
+            var inputs = $(this).parents("table").find("input");
+            var checked = $(this).prop("checked");
+            if (checked) {
+                inputs.prop("checked", "checked");
+            } else {
+                inputs.prop("checked", "");
+            }
+        });
+    }
+})
